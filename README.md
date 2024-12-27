@@ -34,15 +34,46 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 
 **Procedure**
 
-/* write all the steps invloved */
+1. Set Inputs: Configure switches for J and K inputs.
+
+2. Run Simulation: Simulate circuit to see output on LEDs.
+
+3. Check Truth Table: Verify output with JK Flip Flop truth table.
+
+4. Analyze Results: Analyze results, take screenshots, and generate report.
+
+
 
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+/* Program for flipflops and verify its truth table in quartus using Verilog programming. 
+Developed by: Yuvan shankar M
+RegisterNumber: 24900656
 */
+```
+module exp7(J,K,clk,q,qbar);
+input J,K,clk;
+output reg q;
+output reg qbar;
+initial q=0;
+initial qbar=1;
+always @(posedge clk)
+begin
+q=((J&(~q))|((~K)&q));
+qbar=~q;
+end
+endmodule
+
+```
 
 **RTL LOGIC FOR FLIPFLOPS**
 
+![image](https://github.com/user-attachments/assets/17adad3f-277e-4333-b293-602cdd58f720)
+
 **TIMING DIGRAMS FOR FLIP FLOPS**
 
+![image](https://github.com/user-attachments/assets/926dbf97-fab5-4515-bacb-0736b894e5d4)
+
 **RESULTS**
+
+The JK Flip-Flop implemented in Verilog successfully validates its functionality according to its truth table.
